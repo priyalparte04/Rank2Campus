@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="rank-register">
+
+    <!-- Navbar -->
+    <header class="reg-navbar">
+        <div class="reg-nav-container">
+            <a href="{{ url_for('home') }}" class="reg-logo">
+                🎓 Rank2<span>Campus</span>
+            </a>
+
+            <nav class="reg-nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}" class="reg-nav-button">
+                    Register
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration section -->
+    <main class="reg-main">
+        <section class="reg-card">
+
+            <!-- Left information panel -->
+            <div class="reg-info-panel">
+
+                <div class="reg-info-content">
+                    <a href="{{ url_for('home') }}" class="reg-small-logo">
+                        🎓 Rank2<span>Campus</span>
+                    </a>
+
+                    <div class="reg-badge">🚀 Start Your Journey</div>
+
+                    <h1>
+                        Find Your
+                        <span>Dream College</span>
+                    </h1>
+
+                    <p class="reg-description">
+                        Create your Rank2Campus account and get
+                        personalized college and engineering branch
+                        recommendations based on your entrance exam
+                        performance.
+                    </p>
+
+                    <div class="reg-benefit">
+                        <div class="reg-benefit-icon">🎓</div>
+                        <div>
+                            <strong>Personalized Recommendations</strong>
+                            <p>
+                                Discover colleges suitable for your rank
+                                and performance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="reg-benefit">
+                        <div class="reg-benefit-icon reg-green">📖</div>
+                        <div>
+                            <strong>CET &amp; JEE Support</strong>
+                            <p>
+                                Explore opportunities through MHT-CET
+                                and JEE Main.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="reg-benefit">
+                        <div class="reg-benefit-icon reg-purple">🎯</div>
+                        <div>
+                            <strong>Easy College Search</strong>
+                            <p>
+                                Find and compare suitable colleges
+                                in one place.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration page campus image -->
+                <img
+                    src="{{ url_for('static', filename='images/register_page.png') }}"
+                    alt="Students walking toward a modern college campus"
+                    class="reg-campus-image">
+            </div>
+
+            <!-- Right registration form -->
+            <div class="reg-form-panel">
+
+                <div class="reg-form-heading">
+                    <div class="reg-user-icon">♙</div>
+                    <div>
+                        <h2>Create Your Account</h2>
+                        <p>Register to get started with Rank2Campus.</p>
+                    </div>
+                </div>
+
+                <!-- Display existing Flask flash messages -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="reg-message">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <!-- Keep existing backend form field names -->
+                <form method="POST" class="reg-form">
+
+                    <div class="reg-form-group">
+                        <label for="name">Full Name</label>
+
+                        <div class="reg-input-wrapper">
+                            <span aria-hidden="true">♙</span>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="reg-form-group">
+                        <label for="email">Email Address</label>
+
+                        <div class="reg-input-wrapper">
+                            <span aria-hidden="true">✉</span>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="reg-form-group">
+                        <label for="password">Password</label>
+
+                        <div class="reg-input-wrapper">
+                            <span aria-hidden="true">🔒</span>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="reg-submit-button">
+                        Create Account <span>→</span>
+                    </button>
+                </form>
+
+                <div class="reg-or-divider">
+                    <span></span>
+                    <p>OR</p>
+                    <span></span>
+                </div>
+
+                <div class="reg-login-prompt">
+                    Already have an account?
+                    <a href="{{ url_for('login') }}">
+                        Login to Your Account
+                    </a>
+                </div>
+
+                <div class="reg-security-note">
+                    <span>🛡️</span>
+                    <p>
+                        Your account helps Rank2Campus provide a
+                        personalized college recommendation experience.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="reg-footer">
+        <div class="reg-footer-inner">
+            <a href="{{ url_for('home') }}" class="reg-footer-logo">
+                🎓 Rank2<span>Campus</span>
+            </a>
+
+            <nav class="reg-footer-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            </nav>
+
+            <p>© 2026 Rank2Campus. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MHT-CET College Finder | Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="cet-page">
+
+    <!-- NAVBAR -->
+    <nav class="cet-navbar">
+        <a href="{{ url_for('home') }}" class="cet-brand">
+            🎓 Rank2Campus
+        </a>
+
+        <div class="cet-nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('cet') }}" class="active">MHT-CET</a>
+            <a href="{{ url_for('jee') }}">JEE Main</a>
+            <a href="{{ url_for('login') }}" class="cet-login">Login</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="cet-hero">
+
+        <div class="cet-hero-content">
+
+            <span class="cet-badge">
+                🎯 YOUR FUTURE STARTS HERE
+            </span>
+
+            <h1>
+                Find Your Dream College
+                <span>Through MHT-CET</span>
+            </h1>
+
+            <p>
+                Discover engineering colleges based on your MHT-CET
+                percentile, category, and preferred location.
+                Find suitable college options and take the next step
+                toward your engineering career.
+            </p>
+
+            <a href="#cet-form" class="cet-primary-btn">
+                Find My Colleges →
+            </a>
+
+            <div class="cet-highlights">
+                <span>🎓 College Discovery</span>
+                <span>📊 Percentile-Based Search</span>
+                <span>🚀 Plan Your Future</span>
+            </div>
+
+        </div>
+
+        <div class="cet-hero-image">
+            <img
+                src="{{ url_for('static', filename='images/cet-hero.png') }}"
+                alt="Student exploring engineering college options">
+        </div>
+
+    </section>
+
+    <!-- CET FORM SECTION -->
+    <section class="cet-form-section" id="cet-form">
+
+        <div class="cet-section-heading">
+            <span class="cet-section-badge">
+                PERSONALIZED COLLEGE SEARCH
+            </span>
+
+            <h2>Find Colleges That Match Your CET Percentile</h2>
+
+            <p>
+                Enter your details to explore engineering colleges
+                matching your preferences.
+            </p>
+        </div>
+
+        <form action="{{ url_for('cet') }}"
+              method="POST"
+              class="cet-form">
+
+            <div class="cet-form-grid">
+
+                <div class="cet-form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="cet-form-group">
+                    <label for="percentile">MHT-CET Percentile</label>
+                    <input
+                        type="number"
+                        id="percentile"
+                        name="percentile"
+                        placeholder="Example: 92.50"
+                        min="0"
+                        max="100"
+                        step="any"
+                        required>
+                </div>
+
+                <div class="cet-form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select your category</option>
+                        <option value="OPEN">OPEN</option>
+                        <option value="OBC">OBC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="EWS">EWS</option>
+                        <option value="VJ/DT">VJ/DT</option>
+                        <option value="NT">NT</option>
+                        <option value="SBC">SBC</option>
+                    </select>
+                </div>
+
+                <div class="cet-form-group">
+                    <label for="city">Preferred City</label>
+                    <select id="city" name="city" required>
+                        <option value="Any">Any City</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="PCMC">Pimpri-Chinchwad</option>
+                        <option value="Chhatrapati Sambhajinagar">
+                            Chhatrapati Sambhajinagar
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="cet-submit-btn">
+                Find My CET Colleges →
+            </button>
+
+            <p class="cet-form-note">
+                Recommendations depend on the college and cutoff
+                information available in Rank2Campus.
+            </p>
+
+        </form>
+
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="cet-benefits">
+
+        <div class="cet-section-heading">
+            <h2>Make Your College Search Easier</h2>
+            <p>Explore your options and plan your engineering journey.</p>
+        </div>
+
+        <div class="cet-benefits-grid">
+
+            <div class="cet-benefit-card">
+                <div class="cet-benefit-icon">🎯</div>
+                <h3>Personalized Search</h3>
+                <p>
+                    Explore college options using your MHT-CET percentile
+                    and category.
+                </p>
+            </div>
+
+            <div class="cet-benefit-card">
+                <div class="cet-benefit-icon">🏛️</div>
+                <h3>Explore Colleges</h3>
+                <p>
+                    Discover available engineering colleges and branches
+                    in your results.
+                </p>
+            </div>
+
+            <div class="cet-benefit-card">
+                <div class="cet-benefit-icon">📍</div>
+                <h3>Choose Your Location</h3>
+                <p>
+                    Filter available recommendations using your preferred
+                    city.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="cet-footer">
+        <a href="{{ url_for('home') }}" class="cet-footer-brand">
+            🎓 Rank2Campus
+        </a>
+
+        <p>Helping students find their path to the right college.</p>
+        <p>© 2026 Rank2Campus. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

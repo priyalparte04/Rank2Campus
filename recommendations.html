@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Recommendations | Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="recommendations-page">
+
+    <!-- NAVBAR -->
+    <nav class="rec-navbar">
+        <a href="{{ url_for('home') }}" class="rec-brand">
+            🎓 Rank2Campus
+        </a>
+
+        <div class="rec-nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('cet') }}">MHT-CET</a>
+            <a href="{{ url_for('jee') }}">JEE Main</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="rec-hero">
+        <div class="rec-hero-content">
+            <span class="rec-badge">YOUR COLLEGE SEARCH RESULTS</span>
+
+            <h1>
+                Your College Recommendations
+                <span>{{ exam }}</span>
+            </h1>
+
+            <p>
+                Hello, {{ name }}! Review the college options returned
+                for your details and preferences.
+            </p>
+
+            <div class="rec-stats">
+                <div class="rec-stat">
+                    <span>Exam</span>
+                    <strong>{{ exam }}</strong>
+                </div>
+
+                <div class="rec-stat">
+                    <span>Your Percentile</span>
+                    <strong>{{ percentile }}</strong>
+                </div>
+
+                <div class="rec-stat">
+                    <span>Category</span>
+                    <strong>{{ category }}</strong>
+                </div>
+
+                <div class="rec-stat">
+                    <span>Preferred City</span>
+                    <strong>{{ city }}</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <main class="rec-results-section">
+
+        <div class="rec-results-heading">
+            <div>
+                <span class="rec-section-label">YOUR RESULTS</span>
+                <h2>Recommended Colleges</h2>
+                <p>Compare colleges and branches in a spreadsheet-style table.</p>
+            </div>
+
+            <a href="{{ url_for(exam|lower == 'jee' and 'jee' or 'cet') }}"
+               class="rec-back-btn">
+                ← Edit Search
+            </a>
+        </div>
+
+        {% if colleges %}
+
+        <div class="rec-results-count">
+            <span>✓</span>
+            {{ colleges|length }} result(s) found in the available database
+        </div>
+
+        <!-- EXCEL-STYLE TABLE -->
+        <div class="rec-table-container">
+            <table class="rec-table">
+                <thead>
+                    <tr>
+                        <th class="rec-number-col">No.</th>
+                        <th>College Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Engineering Branch</th>
+                        <th>Cutoff Value</th>
+                        <th>Admission Year</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for college in colleges %}
+                    <tr>
+                        <td class="rec-number-col">{{ loop.index }}</td>
+
+                        <td class="rec-college-name">
+                            {{ college.college_name }}
+                        </td>
+
+                        <td>{{ college.city }}</td>
+
+                        <td>{{ college.state }}</td>
+
+                        <td>{{ college.branch_name }}</td>
+
+                        <td class="rec-cutoff">
+                            {{ college.cutoff_value }}
+                        </td>
+
+                        <td>{{ college.admission_year }}</td>
+
+                        <td class="rec-description-cell">
+                            {% if college.description %}
+                                {{ college.description }}
+                            {% else %}
+                                <span class="rec-no-description">—</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="rec-table-note">
+            Tip: Scroll horizontally to view all columns.
+        </p>
+
+        {% else %}
+
+        <!-- NO RESULTS -->
+        <section class="rec-empty-state">
+            <div class="rec-empty-icon">🔎</div>
+
+            <h2>No Matching Colleges Found</h2>
+
+            <p>
+                We couldn't find colleges matching all your selected
+                criteria in the available database. Try another city,
+                check your category, or enter a different percentile.
+            </p>
+
+            <div class="rec-empty-actions">
+                <a href="{{ url_for('cet') }}" class="rec-primary-btn">
+                    Search MHT-CET
+                </a>
+
+                <a href="{{ url_for('jee') }}" class="rec-secondary-btn">
+                    Search JEE Main
+                </a>
+            </div>
+        </section>
+
+        {% endif %}
+
+        <!-- DISCLAIMER -->
+        <div class="rec-disclaimer">
+            <strong>Important:</strong>
+            These results are based on the cutoff and college data
+            available in Rank2Campus. They are informational and do not
+            guarantee admission. Always verify official admission rules
+            and current cutoff information.
+        </div>
+
+        <div class="rec-bottom-actions">
+            <a href="{{ url_for('dashboard') }}" class="rec-secondary-btn">
+                ← Back to Dashboard
+            </a>
+
+            <a href="{{ url_for('home') }}" class="rec-primary-btn">
+                Back to Home
+            </a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="rec-footer">
+        <a href="{{ url_for('home') }}">🎓 Rank2Campus</a>
+        <p>Find your path. Discover your future.</p>
+        <p>© 2026 Rank2Campus. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

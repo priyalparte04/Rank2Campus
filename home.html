@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rank2Campus helps students explore engineering colleges based on MHT-CET and JEE Main performance.">
+    <title>Rank2Campus - Find Your College</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="rank-home">
+
+    <!-- Navigation -->
+    <header class="rc-navbar">
+        <div class="rc-container rc-nav-inner">
+
+            <a href="{{ url_for('home') }}" class="rc-brand">
+                <span class="rc-brand-icon">🎓</span>
+                <span>Rank2<span class="rc-brand-accent">Campus</span></span>
+            </a>
+
+            <button class="rc-menu-toggle"
+                    id="rcMenuToggle"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="rcNavLinks">
+                ☰
+            </button>
+
+            <nav class="rc-nav-links" id="rcNavLinks">
+                <a href="{{ url_for('home') }}" class="active">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('register') }}" class="rc-nav-cta">
+                    Get Started
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="rc-hero">
+            <div class="rc-container rc-hero-grid">
+
+                <div class="rc-hero-content">
+
+                    <div class="rc-eyebrow">
+                        <span>🎓</span>
+                        Your Future · Our Guidance
+                    </div>
+
+                    <h1>
+                        Find the Right College
+                        <span>Based on Your Rank</span>
+                    </h1>
+
+                    <p class="rc-hero-description">
+                        Rank2Campus helps students find suitable colleges
+                        and engineering branches based on their MHT-CET
+                        or JEE Main performance.
+                    </p>
+
+                    <div class="rc-hero-actions">
+                        <a href="{{ url_for('register') }}"
+                           class="rc-btn rc-btn-primary">
+                            <span>➜</span> Get Started
+                        </a>
+
+                        <a href="#how-it-works"
+                           class="rc-btn rc-btn-outline">
+                            Explore Colleges <span>⌕</span>
+                        </a>
+                    </div>
+
+                    <div class="rc-hero-note">
+                        <span>✓</span>
+                        Make informed choices for your future.
+                    </div>
+
+                </div>
+
+                <div class="rc-hero-visual">
+                    <img
+                        src="{{ url_for('static', filename='images/rank2campus-hero-campus.png') }}"
+                        alt="Students walking towards a modern engineering college campus"
+                        class="rc-campus-image">
+
+                    <div class="rc-image-badge">
+                        <span class="rc-badge-icon">🎯</span>
+                        <div>
+                            <strong>Your Goal, Your Future</strong>
+                            <span>Choose your college confidently</span>
+                        </div>
+                    </div>
+
+                    <div class="rc-floating-cap">🎓</div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Feature Cards -->
+        <section class="rc-features">
+            <div class="rc-container rc-feature-grid">
+
+                <article class="rc-feature-card rc-feature-blue">
+                    <div class="rc-feature-icon">📘</div>
+                    <div class="rc-feature-content">
+                        <h3>Accurate Results</h3>
+                        <p>
+                            Explore college recommendations based on
+                            your entered rank, percentile and category.
+                        </p>
+                    </div>
+                    <span class="rc-feature-arrow">➜</span>
+                </article>
+
+                <article class="rc-feature-card rc-feature-teal">
+                    <div class="rc-feature-icon">🏛️</div>
+                    <div class="rc-feature-content">
+                        <h3>Multiple Options</h3>
+                        <p>
+                            Explore engineering colleges and branches
+                            across Maharashtra and India.
+                        </p>
+                    </div>
+                    <span class="rc-feature-arrow">➜</span>
+                </article>
+
+                <article class="rc-feature-card rc-feature-purple">
+                    <div class="rc-feature-icon">🎯</div>
+                    <div class="rc-feature-content">
+                        <h3>Personalized Guidance</h3>
+                        <p>
+                            Explore options based on your exam,
+                            category and preferred location.
+                        </p>
+                    </div>
+                    <span class="rc-feature-arrow">➜</span>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- How It Works -->
+        <section class="rc-how" id="how-it-works">
+            <div class="rc-container">
+
+                <div class="rc-section-heading">
+                    <div class="rc-section-label">
+                        <span></span> HOW IT WORKS <span></span>
+                    </div>
+
+                    <h2>
+                        Get Your College Recommendations
+                        <span>in 3 Simple Steps</span>
+                    </h2>
+
+                    <p>
+                        Your journey to finding the right engineering
+                        college starts here.
+                    </p>
+                </div>
+
+                <div class="rc-steps-grid">
+
+                    <article class="rc-step">
+                        <div class="rc-step-icon">
+                            <span>👤</span>
+                            <b>1</b>
+                        </div>
+                        <h3>Enter Your Details</h3>
+                        <p>
+                            Provide your name, exam, percentile,
+                            category and preferred city.
+                        </p>
+                    </article>
+
+                    <div class="rc-step-arrow" aria-hidden="true">⟶</div>
+
+                    <article class="rc-step">
+                        <div class="rc-step-icon">
+                            <span>🔎</span>
+                            <b>2</b>
+                        </div>
+                        <h3>Get Recommendations</h3>
+                        <p>
+                            Explore matching colleges using the
+                            recommendation results available in Rank2Campus.
+                        </p>
+                    </article>
+
+                    <div class="rc-step-arrow" aria-hidden="true">⟶</div>
+
+                    <article class="rc-step">
+                        <div class="rc-step-icon">
+                            <span>🏫</span>
+                            <b>3</b>
+                        </div>
+                        <h3>Explore &amp; Decide</h3>
+                        <p>
+                            Compare the available colleges and branches
+                            to make a more informed choice.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="rc-how-action">
+                    <a href="{{ url_for('register') }}"
+                       class="rc-btn rc-btn-primary">
+                        Start Your Journey <span>→</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Benefits -->
+        <section class="rc-benefits">
+            <div class="rc-container">
+
+                <h2>Why Choose Rank2Campus?</h2>
+
+                <div class="rc-benefits-grid">
+
+                    <div class="rc-benefit">
+                        <span>✓</span>
+                        <p>Informed Decisions</p>
+                    </div>
+
+                    <div class="rc-benefit">
+                        <span>◆</span>
+                        <p>Easy to Use</p>
+                    </div>
+
+                    <div class="rc-benefit">
+                        <span>⚡</span>
+                        <p>Save Time</p>
+                    </div>
+
+                    <div class="rc-benefit">
+                        <span>♥</span>
+                        <p>Build Your Future</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="rc-footer">
+        <div class="rc-container rc-footer-inner">
+
+            <a href="{{ url_for('home') }}" class="rc-brand rc-footer-brand">
+                <span class="rc-brand-icon">🎓</span>
+                <span>Rank2<span class="rc-brand-accent">Campus</span></span>
+            </a>
+
+            <p>
+                © 2026 Rank2Campus. All rights reserved.
+            </p>
+
+            <div class="rc-footer-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Mobile Navigation -->
+    <script>
+        const menuToggle = document.getElementById("rcMenuToggle");
+        const navLinks = document.getElementById("rcNavLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("rc-nav-open");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("rc-nav-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    </script>
+
+</body>
+</html>
