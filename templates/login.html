@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="rank-login">
+
+    <header class="login-navbar">
+        <div class="login-nav-inner">
+
+            <a href="{{ url_for('home') }}" class="login-brand">
+                🎓 Rank2<span>Campus</span>
+            </a>
+
+            <nav class="login-nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('login') }}" class="active">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('register') }}"
+                   class="login-get-started">Get Started</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <!-- Left welcome panel -->
+            <div class="login-welcome">
+
+                <div class="login-welcome-content">
+
+                    <div class="login-mini-brand">
+                        🎓 Rank2<span>Campus</span>
+                    </div>
+
+                    <h1>Welcome <span>Back!</span></h1>
+
+                    <p class="login-intro">
+                        Login to access your personalized college
+                        recommendations and explore the best options
+                        for your future.
+                    </p>
+
+                    <div class="login-benefit">
+                        <div class="login-benefit-icon">🎓</div>
+                        <div>
+                            <strong>Find Your Dream College</strong>
+                            <p>
+                                Get personalized recommendations
+                                based on your rank and preferences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="login-benefit">
+                        <div class="login-benefit-icon">📖</div>
+                        <div>
+                            <strong>Explore Multiple Options</strong>
+                            <p>
+                                Discover engineering colleges and
+                                branches across Maharashtra and India.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="login-benefit">
+                        <div class="login-benefit-icon">🎯</div>
+                        <div>
+                            <strong>Make Informed Decisions</strong>
+                            <p>
+                                Build a brighter future with the
+                                right guidance and support.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <img 
+                    src="{{ url_for('static', filename='images/login-campus.png') }}"
+                    alt="Students visiting a modern college campus"
+                    class="login-campus-photo">
+
+            </div>
+
+            <!-- Right login panel -->
+            <div class="login-form-panel">
+
+                <div class="login-form-heading">
+                    <div class="login-user-icon">♙</div>
+                    <h2>Login</h2>
+                </div>
+
+                <p class="login-form-description">
+                    Enter your email and password to continue
+                    to your account.
+                </p>
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="login-error">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <form method="POST"
+                      action="{{ url_for('login') }}">
+
+                    <div class="login-field">
+                        <label for="email">Email Address</label>
+
+                        <div class="login-input-wrap">
+                            <span class="login-input-icon">✉</span>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email"
+                                autocomplete="email"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="login-field">
+                        <label for="password">Password</label>
+
+                        <div class="login-input-wrap">
+                            <span class="login-input-icon">♙</span>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                                autocomplete="current-password"
+                                required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-submit">
+                        Login &nbsp; →
+                    </button>
+
+                </form>
+
+                <div class="login-register">
+                    Don't have an account?
+                    <a href="{{ url_for('register') }}">
+                        Register here
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+```

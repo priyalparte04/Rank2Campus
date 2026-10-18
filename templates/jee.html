@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JEE Main College Finder | Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="jee-page">
+
+    <!-- Navigation Bar -->
+    <nav class="jee-navbar">
+        <a href="{{ url_for('home') }}" class="jee-logo">
+            <span class="jee-logo-icon">🎓</span>
+            <span>Rank2Campus</span>
+        </a>
+
+        <div class="jee-nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('cet') }}">MHT-CET</a>
+            <a href="{{ url_for('jee') }}" class="jee-active">JEE Main</a>
+            <a href="{{ url_for('login') }}" class="jee-login-btn">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="jee-hero">
+
+        <div class="jee-hero-content">
+
+            <div class="jee-badge">
+                🎓 JEE MAIN COLLEGE FINDER
+            </div>
+
+            <h1>
+                Find Your Dream College Through
+                <span>JEE Main</span>
+            </h1>
+
+            <p>
+                Discover engineering college options based on your
+                JEE Main percentile, category, and preferred location.
+                Make your future brighter with Rank2Campus.
+            </p>
+
+            <a href="#jee-form" class="jee-primary-btn">
+                Find My Colleges →
+            </a>
+
+            <div class="jee-quick-features">
+                <div>🎓 College Discovery</div>
+                <div>📊 Percentile-Based Search</div>
+                <div>🚀 Plan Your Future</div>
+            </div>
+
+        </div>
+
+        <div class="jee-hero-image">
+            <img
+                src="{{ url_for('static', filename='images/jee-hero.png') }}"
+                alt="Student preparing for JEE Main and exploring engineering colleges">
+        </div>
+
+    </section>
+
+    <!-- Student Details Form -->
+    <section class="jee-form-section" id="jee-form">
+
+        <div class="jee-section-heading">
+            <span class="jee-small-badge">PERSONALIZED COLLEGE SEARCH</span>
+
+            <h2>Find Colleges That Match Your Profile</h2>
+
+            <p>
+                Enter your details below to explore engineering college
+                options based on your JEE Main performance.
+            </p>
+        </div>
+
+        <form action="{{ url_for('jee') }}"
+              method="POST"
+              class="jee-form">
+
+            <div class="jee-form-grid">
+
+                <!-- Student Name -->
+                <div class="jee-form-group">
+                    <label for="name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <!-- JEE Percentile -->
+                <div class="jee-form-group">
+                    <label for="percentile">JEE Main Percentile</label>
+
+                    <input
+                        type="number"
+                        id="percentile"
+                        name="percentile"
+                        placeholder="e.g. 92.50"
+                        min="0"
+                        max="100"
+                        step="any"
+                        required>
+                </div>
+
+                <!-- Category -->
+                <div class="jee-form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category" name="category" required>
+                        <option value="">Select your category</option>
+                        <option value="OPEN">OPEN</option>
+                        <option value="OBC">OBC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="EWS">EWS</option>
+                        <option value="VJ/DT">VJ/DT</option>
+                        <option value="NT">NT</option>
+                        <option value="SBC">SBC</option>
+                    </select>
+                </div>
+
+                <!-- Preferred City -->
+                <div class="jee-form-group">
+                    <label for="city">Preferred City</label>
+
+                    <select id="city" name="city" required>
+                        <option value="Any">Any City</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="PCMC">Pimpri-Chinchwad</option>
+                        <option value="Chhatrapati Sambhajinagar">
+                            Chhatrapati Sambhajinagar
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="jee-submit-btn">
+                Find My JEE Colleges →
+            </button>
+
+            <p class="jee-form-note">
+                Recommendations depend on the college and cutoff data
+                available in Rank2Campus.
+            </p>
+
+        </form>
+
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="jee-benefits-section">
+
+        <div class="jee-section-heading">
+            <h2>Your College Search, Made Easier</h2>
+
+            <p>
+                Explore available options and plan your engineering journey.
+            </p>
+        </div>
+
+        <div class="jee-benefits-grid">
+
+            <div class="jee-benefit-card">
+                <div class="jee-benefit-icon">🏛️</div>
+                <h3>Engineering Colleges</h3>
+                <p>
+                    Explore available engineering colleges and their
+                    branches in the recommendation results.
+                </p>
+            </div>
+
+            <div class="jee-benefit-card">
+                <div class="jee-benefit-icon">🎯</div>
+                <h3>Personalized Search</h3>
+                <p>
+                    Use your JEE Main percentile, category, and preferred
+                    city to find matching options.
+                </p>
+            </div>
+
+            <div class="jee-benefit-card">
+                <div class="jee-benefit-icon">⭐</div>
+                <h3>Plan Your Future</h3>
+                <p>
+                    Review available college options before deciding
+                    your next step.
+                </p>
+            </div>
+
+            <div class="jee-benefit-card">
+                <div class="jee-benefit-icon">📍</div>
+                <h3>Location Preferences</h3>
+                <p>
+                    Choose a preferred city or search across all cities
+                    supported by the application.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="jee-footer">
+
+        <a href="{{ url_for('home') }}" class="jee-footer-logo">
+            🎓 Rank2Campus
+        </a>
+
+        <p>Helping students make informed college choices.</p>
+
+        <p class="jee-copyright">
+            © 2026 Rank2Campus. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="rank-dashboard">
+
+    <aside class="dash-sidebar">
+        <a href="{{ url_for('dashboard') }}" class="dash-brand">
+            <span class="dash-brand-icon">🎓</span>
+            <span>Rank2<span class="dash-cyan">Campus</span></span>
+        </a>
+
+        <nav class="dash-nav">
+            <a href="{{ url_for('dashboard') }}"
+               class="dash-nav-link active">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="{{ url_for('about') }}" class="dash-nav-link">
+                <span>ⓘ</span> About
+            </a>
+
+            <a href="{{ url_for('login') }}" class="dash-nav-link">
+                <span>⇥</span> Login
+            </a>
+        </nav>
+
+        <div class="dash-sidebar-bottom">
+            <div class="dash-cap">🎓</div>
+            <h3>Better Choices</h3>
+            <p>Brighter Future</p>
+            <div class="dash-underline"></div>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+
+        <header class="dash-topbar">
+            <div class="dash-mobile-brand">
+                🎓 Rank2<span class="dash-cyan">Campus</span>
+            </div>
+
+            <div class="dash-user">
+                <span class="dash-user-icon">♙</span>
+                <span>Welcome to Rank2Campus</span>
+            </div>
+        </header>
+
+        <div class="dash-content">
+
+            <section class="dash-hero">
+                <div class="dash-hero-text">
+                    <span class="dash-pill">
+                        👋 Welcome to Rank2Campus
+                    </span>
+
+                    <h1>
+                        Your College Journey
+                        <span>Starts Here!</span>
+                    </h1>
+
+                    <p>
+                        Explore colleges, compare options and find the best
+                        engineering branch based on your exam performance.
+                    </p>
+
+                    <div class="dash-hero-note">
+                        <span>✓</span>
+                        Personalized guidance for your future
+                    </div>
+                </div>
+
+                <div class="dash-hero-image-wrap">
+                    <img
+                        src="{{ url_for('static', filename='images/Dashboard-img.png') }}"
+                        alt="Students planning their college journey"
+                        class="dash-hero-image">
+                </div>
+            </section>
+
+            <section class="dash-exams">
+                <div class="dash-section-heading">
+                    <span class="dash-section-tag">GET STARTED</span>
+                    <h2>Select Your Entrance Exam</h2>
+                    <p>
+                        Choose your entrance examination to discover suitable
+                        colleges and engineering branches.
+                    </p>
+                </div>
+
+                <div class="dash-exam-grid">
+
+                    <article class="dash-exam-card">
+                        <div class="dash-exam-icon cet-icon">C</div>
+
+                        <div class="dash-exam-info">
+                            <span class="dash-available">AVAILABLE</span>
+                            <span class="dash-exam-label">
+                                ENGINEERING ENTRANCE
+                            </span>
+                            <h3>MHT-CET</h3>
+
+                            <p>
+                                Enter your MHT-CET marks or percentile and
+                                discover suitable colleges and engineering branches.
+                            </p>
+
+                            <a href="{{ url_for('cet') }}"
+                               class="dash-exam-button cet-button">
+                                Continue with CET <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="dash-exam-card">
+                        <div class="dash-exam-icon jee-icon">J</div>
+
+                        <div class="dash-exam-info">
+                            <span class="dash-available">AVAILABLE</span>
+                            <span class="dash-exam-label">
+                                NATIONAL ENTRANCE
+                            </span>
+                            <h3>JEE Main</h3>
+
+                            <p>
+                                Enter your JEE Main percentile and discover
+                                suitable colleges and engineering branches.
+                            </p>
+
+                            <a href="{{ url_for('jee') }}"
+                               class="dash-exam-button jee-button">
+                                Continue with JEE <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="dash-features">
+                <div class="dash-section-heading">
+                    <h2>Why Choose Rank2Campus?</h2>
+                </div>
+
+                <div class="dash-feature-grid">
+
+                    <article class="dash-feature-card feature-blue">
+                        <div class="dash-feature-icon">🎓</div>
+                        <div>
+                            <h3>Personalized Recommendations</h3>
+                            <p>
+                                Get colleges and branches that match your
+                                rank and preferences.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="dash-feature-card feature-green">
+                        <div class="dash-feature-icon">📊</div>
+                        <div>
+                            <h3>Compare Options</h3>
+                            <p>
+                                View multiple colleges and branches
+                                side by side.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="dash-feature-card feature-purple">
+                        <div class="dash-feature-icon">🎯</div>
+                        <div>
+                            <h3>Plan Your Future</h3>
+                            <p>
+                                Make informed decisions for a brighter
+                                tomorrow.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="dash-feature-card feature-orange">
+                        <div class="dash-feature-icon">📍</div>
+                        <div>
+                            <h3>Trusted Information</h3>
+                            <p>
+                                Use college information to make better
+                                choices.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="dash-quote">
+                <span class="dash-quote-icon">🎓</span>
+                <p>
+                    “Your dream college is not just a destination,
+                    it's a step towards your future.”
+                </p>
+            </section>
+
+        </div>
+
+        <footer class="dash-footer">
+            <span>🎓 Rank2Campus</span>
+            <span>© 2026 Rank2Campus. All Rights Reserved.</span>
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```
