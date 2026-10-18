@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Rank2Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="about-page">
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="logo">
+                🎓 Rank2Campus
+            </a>
+
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}" class="about-active">About</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}" class="register-btn">
+                    Get Started
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- About Hero -->
+        <section class="about-hero">
+            <div class="about-badge">ABOUT RANK2CAMPUS</div>
+
+            <h1>
+                Find Your Right College.<br>
+                <span>Build Your Future.</span>
+            </h1>
+
+            <p>
+                Rank2Campus helps students explore suitable engineering
+                colleges and branches based on their CET or JEE Main
+                performance, category and preferences.
+            </p>
+
+            <a href="{{ url_for('register') }}" class="primary-btn">
+                Get Started →
+            </a>
+        </section>
+
+        <!-- About Description -->
+        <section class="about-container">
+            <div class="about-heading">
+                <span class="about-label">WHO WE ARE</span>
+                <h2>Making College Selection Easier</h2>
+                <p>
+                    Choosing the right engineering college can be confusing.
+                    Rank2Campus simplifies the process by helping students
+                    explore college options and available branch information
+                    in one place.
+                </p>
+            </div>
+
+            <div class="about-info-grid">
+                <div class="about-info-card">
+                    <div class="about-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To help students make informed college choices
+                        by providing a simple way to explore relevant
+                        engineering colleges and branches.
+                    </p>
+                </div>
+
+                <div class="about-info-card">
+                    <div class="about-icon">🚀</div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To make the college-search journey easier,
+                        clearer and more accessible for students
+                        planning their future.
+                    </p>
+                </div>
+
+                <div class="about-info-card">
+                    <div class="about-icon">💡</div>
+                    <h3>Our Goal</h3>
+                    <p>
+                        To organise college information and help students
+                        identify options worth exploring according to
+                        their exam performance and preferences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="about-how">
+            <div class="about-heading">
+                <span class="about-label">HOW IT WORKS</span>
+                <h2>Three Simple Steps</h2>
+                <p>Start exploring your engineering college options.</p>
+            </div>
+
+            <div class="about-steps">
+
+                <div class="about-step">
+                    <span class="step-number">01</span>
+                    <h3>Enter Your Details</h3>
+                    <p>
+                        Provide your exam percentile, category
+                        and preferred location.
+                    </p>
+                </div>
+
+                <div class="about-step">
+                    <span class="step-number">02</span>
+                    <h3>Explore Colleges</h3>
+                    <p>
+                        View available college and branch options
+                        based on the information you provide.
+                    </p>
+                </div>
+
+                <div class="about-step">
+                    <span class="step-number">03</span>
+                    <h3>Plan Your Future</h3>
+                    <p>
+                        Compare the available information and
+                        research your preferred colleges.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Exam Options -->
+        <section class="about-exams">
+            <div class="about-heading">
+                <span class="about-label">EXPLORE YOUR OPTIONS</span>
+                <h2>Choose Your Entrance Exam</h2>
+                <p>
+                    Select the pathway relevant to your examination.
+                </p>
+            </div>
+
+            <div class="about-exam-grid">
+
+                <div class="about-exam-card">
+                    <div class="exam-icon">CET</div>
+                    <h3>MHT-CET</h3>
+                    <p>
+                        Explore engineering colleges and branches
+                        using your MHT-CET percentile and preferences.
+                    </p>
+                    <a href="{{ url_for('cet') }}">Explore CET →</a>
+                </div>
+
+                <div class="about-exam-card">
+                    <div class="exam-icon jee-icon">JEE</div>
+                    <h3>JEE Main</h3>
+                    <p>
+                        Explore available engineering college options
+                        using your JEE Main percentile and preferences.
+                    </p>
+                    <a href="{{ url_for('jee') }}">Explore JEE →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="about-cta">
+            <h2>Your College Journey Starts Here.</h2>
+            <p>
+                Take the first step towards discovering your
+                engineering college options with Rank2Campus.
+            </p>
+            <a href="{{ url_for('register') }}" class="about-cta-btn">
+                Get Started Today →
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="about-footer">
+        <a href="{{ url_for('home') }}" class="footer-logo">
+            🎓 Rank2Campus
+        </a>
+        <p>Helping students explore their college possibilities.</p>
+        <p class="footer-copy">
+            © 2026 Rank2Campus. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
